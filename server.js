@@ -20,4 +20,8 @@ app.get('/armorset', function(req, res){
 		.catch( err => console.log(err) )
 })
 
+app.get('/', function(req, res){
+	res.send('Welcome to my API :)')
+})
+
 app.listen(port)
