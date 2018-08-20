@@ -5,6 +5,8 @@ const Schema = mongoose.Schema;
 var armorSchema = new Schema({
 	rank: String,
 	setName: String,
+	rarity: Number,
+	defense: Number,
 	pieces: [Schema.Types.Mixed]
 })
 
@@ -13,8 +15,7 @@ var _Set = mongoose.model('Set', armorSchema)
 function correct_img(file){
 	let baseUri = "https://monsterhunterworld.wiki.fextralife.com";
 	file.pieces.forEach(piece=>{
-		baseUri += piece.imgsrc;
-		piece.imgsrc = baseUri;
+		piece.imgsrc = baseUri+piece.imgsrc;
 		console.log(baseUri);
 	})
 }
