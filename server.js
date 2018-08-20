@@ -12,6 +12,8 @@ mongoose.connect('mongodb://jotaka:skylane07@ds018308.mlab.com:18308/monhun', { 
 var armorSchema = new Schema({
 	rank: String,
 	setName: String,
+	rarity: Number,
+	defense: Number,
 	pieces: [Schema.Types.Mixed]
 })
 var _Set = mongoose.model('Set', armorSchema) ;
