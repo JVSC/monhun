@@ -18,6 +18,7 @@ var armorSchema = new Schema({
 	Thunder: Number,
 	Water: Number,
 	Ice: Number,
+	order: String,
 	Dragon: Number,
 	Slots: Number,
 	pieces: [Schema.Types.Mixed]

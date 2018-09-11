@@ -13,6 +13,7 @@ var armorSchema = new Schema({
 	Ice: Number,
 	Dragon: Number,
 	Slots: Number,
+	order: String,
 	pieces: [Schema.Types.Mixed]
 })
 
@@ -37,7 +38,7 @@ _Set
 			correct_img(file)
 			_Set
 				.create(file)
-				.then(savedData => { console.log("Record saved!")} )
+				.then(savedData => { console.log("Working on it...")} )
 				.catch(err => { console.log(err)} )
 		})
 	})
