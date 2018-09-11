@@ -14,6 +14,12 @@ var armorSchema = new Schema({
 	setName: String,
 	rarity: Number,
 	defense: Number,
+	Fire:Number,
+	Thunder: Number,
+	Water: Number,
+	Ice: Number,
+	Dragon: Number,
+	Slots: Number,
 	pieces: [Schema.Types.Mixed]
 })
 var _Set = mongoose.model('Set', armorSchema) ;

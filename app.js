@@ -7,6 +7,12 @@ var armorSchema = new Schema({
 	setName: String,
 	rarity: Number,
 	defense: Number,
+	Fire:Number,
+	Thunder: Number,
+	Water: Number,
+	Ice: Number,
+	Dragon: Number,
+	Slots: Number,
 	pieces: [Schema.Types.Mixed]
 })
 
@@ -22,11 +28,16 @@ function correct_img(file){
 
 mongoose.connect('mongodb://jotaka:skylane07@ds018308.mlab.com:18308/monhun')
  
-setnames.forEach(set=>{
-	var file = require('./data/'+set+'/armor.json')
-	correct_img(file)
-	_Set
-		.create(file)
-		.then(savedData => { console.log("Record saved!")} )
-		.catch(err => { console.log(err)} )
-})
+_Set
+	.remove({})
+	.then(()=>{
+		console.log('Records deleted...')
+		setnames.forEach(set=>{
+			var file = require('./data/'+set+'/armor.json')
+			correct_img(file)
+			_Set
+				.create(file)
+				.then(savedData => { console.log("Record saved!")} )
+				.catch(err => { console.log(err)} )
+		})
+	})
