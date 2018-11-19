@@ -28,6 +28,8 @@ var _Set = mongoose.model('Set', armorSchema) ;
 
 // ROUTING CODE
 app.use(Cors())
+
+app.use(express.static('dist'));
 app.get('/armorset', function(req, res){
 	_Set
 		.find({})
@@ -36,7 +38,7 @@ app.get('/armorset', function(req, res){
 })
 
 app.get('/', function(req, res){
-	res.send('Welcome to my API :)')
+	res.sendFile("index.html");
 })
 
 app.listen(port)
